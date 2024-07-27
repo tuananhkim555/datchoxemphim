@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Seat from './Seat.jsx';
 import '../styles/SeatSelection.css';
 
@@ -10,33 +10,6 @@ const SeatSelection = () => {
   const [reservedSeats, setReservedSeats] = useState([]);
   const [confirmMessage, setConfirmMessage] = useState('');
   const [isSelecting, setIsSelecting] = useState(false);
-
-  // Tải dữ liệu từ localStorage khi component mount
-  useEffect(() => {
-    const savedName = localStorage.getItem('name') || '';
-    const savedNumSeats = localStorage.getItem('numSeats') || '';
-    const savedSelectedSeats = JSON.parse(localStorage.getItem('selectedSeats')) || [];
-    const savedReservedSeats = JSON.parse(localStorage.getItem('reservedSeats')) || [];
-    const savedConfirmMessage = localStorage.getItem('confirmMessage') || '';
-    const savedIsSelecting = localStorage.getItem('isSelecting') === 'true';
-
-    setName(savedName);
-    setNumSeats(savedNumSeats);
-    setSelectedSeats(savedSelectedSeats);
-    setReservedSeats(savedReservedSeats);
-    setConfirmMessage(savedConfirmMessage);
-    setIsSelecting(savedIsSelecting);
-  }, []);
-
-  // Lưu dữ liệu vào localStorage khi có sự thay đổi
-  useEffect(() => {
-    localStorage.setItem('name', name);
-    localStorage.setItem('numSeats', numSeats);
-    localStorage.setItem('selectedSeats', JSON.stringify(selectedSeats));
-    localStorage.setItem('reservedSeats', JSON.stringify(reservedSeats));
-    localStorage.setItem('confirmMessage', confirmMessage);
-    localStorage.setItem('isSelecting', isSelecting);
-  }, [name, numSeats, selectedSeats, reservedSeats, confirmMessage, isSelecting]);
 
   const handleSeatClick = (seatNumber) => {
     if (!isSelecting) {
@@ -81,7 +54,6 @@ const SeatSelection = () => {
     setSelectedSeats([]);
     setConfirmMessage('');
     setIsSelecting(false); // Đặt lại trạng thái chọn ghế
-    localStorage.clear(); // Xóa tất cả dữ liệu localStorage
   };
 
   return (
@@ -102,8 +74,8 @@ const SeatSelection = () => {
         <button onClick={handleStartSelecting}>Start Selecting</button>
       </div>
       <div className="info-messages">
-        <p className="info-message">B1 Nhập tên và số lượng ghế.</p>
-        <p className="info-message">B2 Nhấn Start Selecting chọn ghế</p>
+        <p className="info-message">Vui lòng nhập tên và số lượng ghế.</p>
+        <p className="info-message">Mời bạn nhấn "Start Selecting" để chọn ghế.</p>
       </div>
       <div className="legend">
         <span className="selected">Selected Seat</span>
@@ -144,3 +116,4 @@ const SeatSelection = () => {
 };
 
 export default SeatSelection;
+
