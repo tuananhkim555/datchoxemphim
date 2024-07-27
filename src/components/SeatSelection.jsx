@@ -74,8 +74,8 @@ const SeatSelection = () => {
         <button onClick={handleStartSelecting}>Start Selecting</button>
       </div>
       <div className="info-messages">
-        <p className="info-message">Vui lòng nhập tên và số lượng ghế.</p>
-        <p className="info-message">Mời bạn nhấn "Start Selecting" để chọn ghế.</p>
+        <p className="info-message">B1 Nhập tên và số lượng ghế</p>
+        <p className="info-message">B2 nhấn Start Selecting để chọn ghế</p>
       </div>
       <div className="legend">
         <span className="selected">Selected Seat</span>
