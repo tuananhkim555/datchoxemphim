@@ -1,0 +1,44 @@
+/* src/components/Seat.css */
+.seat {
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    background-color: white;
+    border: 1px solid rgba(182, 0, 0, 0.445);
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .seat.selected {
+    background-color: green;
+  }
+  
+  .seat.reserved {
+    background-color: red;
+  }
+  
+  /* src/components/SeatSelection.css */
+  .seat-selection .row {
+    display: flex;
+  }
+  
+  .seat-selection input {
+    margin: 5px;
+  }
+  
+  .seat-selection button {
+    margin: 5px;
+  }
+  
+  /* Responsive CSS */
+  @media (max-width: 768px) {
+    .seat {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+    }
+  }
+  

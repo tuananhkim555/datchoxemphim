@@ -1,0 +1,140 @@
+/* src/styles/SeatSelection.css */
+
+.seat-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Thêm khoảng đệm xung quanh */
+  }
+  
+  .seat-selection .step1,
+  .seat-selection .step2,
+  .seat-selection .step3 {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+  }
+  
+  .seat-selection .step1 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .seat-selection .step1 input {
+    margin: 5px;
+    padding: 10px;
+    width: 150px;
+    box-sizing: border-box; /* Đảm bảo padding không làm vượt quá chiều rộng */
+  }
+  
+  .seat-selection .step1 button {
+    margin-left: 10px;
+    padding: 10px 20px;
+  }
+  
+  .seat-selection .legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .seat-selection .legend span {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+  }
+  
+  .seat-selection .legend span::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    border: 2px solid;
+    vertical-align: middle;
+  }
+  
+  .seat-selection .legend .selected::before {
+    background-color: green;
+  }
+  
+  .seat-selection .legend .reserved::before {
+    background-color: red;
+  }
+  
+  .seat-selection .legend .empty::before {
+    background-color: orange;
+  }
+  
+  .seat-selection .seat-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .seat-selection .row {
+    display: flex;
+    align-items: center;
+  }
+  
+  .row-label {
+    margin-right: 10px;
+    font-weight: bold;
+    width: 20px; /* Chiều rộng cho nhãn hàng */
+    text-align: center;
+  }
+  
+  .seat-selection button {
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: orange;
+  }
+  
+  .info-message {
+    color: #ff0000; /* Màu đỏ cho thông báo lỗi */
+    margin-top: 10px;
+    text-align: center; /* Căn giữa nội dung */
+  }
+  
+  /* Responsive CSS */
+  @media (max-width: 768px) {
+    .seat-selection .step1 {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .seat-selection .step1 input,
+    .seat-selection .step1 button {
+      width: 100%;
+      margin: 5px 0;
+    }
+  
+    .seat-selection .seat-map {
+      width: 100%;
+    }
+  
+    .seat-selection .row {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .seat {
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      margin: 2px;
+    }
+  
+    .seat-selection .legend {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .seat-selection .legend span {
+      margin: 5px 0;
+    }
+  }
+  
